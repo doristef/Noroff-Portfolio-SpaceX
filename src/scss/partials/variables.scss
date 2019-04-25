@@ -1,0 +1,46 @@
+// FONT FAMILY 
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Teko:300:400:700');
+
+//*** FONT - IMPORT ***/
+
+$bodyFont : 'Lato',sans-serif;
+$bodyWeight : 300;
+$h1Font : 'Teko', cursive;
+$h1Weight: 700;
+$headingFont : 'Lato', cursive;
+$headingWeight: 700;
+$navHeadingFont : 'Teko', sans-serif;
+$navHeadingWeight: 700;
+$navHeadingSize: 3.5em;
+$navFont : 'Teko', sans-serif;
+$navWeight : 400;
+$navSize: 2.2em;
+
+//** COLORS **//
+$black : #000000;
+$white : #ffffff;
+$white2 : #fdfdfd;
+
+$dark : #1b1b1d;
+$gray : #e9e9e9;
+$darkGray : #494949;
+
+$color1 : #FF6B4C;
+$color2 : #24b2e8;
+
+//** FONT SIZES **//
+$headings: (
+    h1 : 42px,
+    h2 : 31px,
+    h3 : 26px,
+    h4 : 22px,
+    h5 : 20px,
+    h6 : 16px );
+$bodyFontSize : 16px;
+$lineHeight: 1.5em;
+
+//** SIZES **//
+$navHeight: 80px;
+
+$smallScreen: 767px;
+$medScreen: 1024px;

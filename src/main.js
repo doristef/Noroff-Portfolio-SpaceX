@@ -50,8 +50,8 @@ import "animate.css/animate.css";
 
 /* FontAwesome - FortAwesome  */
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch, faCheck } from "@fortawesome/free-solid-svg-icons";
-  library.add( faSearch, faCheck );
+import { faSearch, faCheck, faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+  library.add( faSearch, faCheck, faArrowAltCircleRight );
 
 /* Mount */
 new Vue({

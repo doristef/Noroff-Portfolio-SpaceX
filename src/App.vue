@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="[ bg-nav ]">
 
-    <Navigation :dropdown="this.dropdown" :navigation="this.navigation" />
+    <Navigation :dropdown="this.dropdown" :navigation="this.navigation" :hideNavbar="hideNavbar" />
     <router-view />
     <router-view name="helper" />
 
@@ -27,7 +27,8 @@ import Capsules from './components/IssLocation.vue';
 import Astronauts from './components/Astronauts.vue';
 import IssLocation from './components/IssLocation.vue';
 import About from './components/About.vue';
-import Contact from './components/Contact.vue';
+import Contact from './components/Contact/Contact.vue';
+import ThankYou from './components/Contact/ThankYou.vue';
 
 /* Router Config */
 const router = new VueRouter({
@@ -80,6 +81,10 @@ const router = new VueRouter({
     {
       path: '/contact',
       component: Contact,
+    },
+    {
+      path: '/thankyou',
+      component: ThankYou
     }
   ]
 })
@@ -109,9 +114,34 @@ export default {
         navigation: { 
                         about: 'About SpaceX',
                         contact: 'Contact'
-        }
+        },
       /* NAVIGATION END */
+      hideNavbar: false,
+      lastScrollPosition: 0,
     }
-  }
+  },
+
+  methods: {
+    onScroll () {
+        // For some reason it only works on body
+        var sh = document.body.scrollHeight;
+        var st = document.body.scrollTop;
+        var oh = document.body.offsetHeight;
+
+        var currentScrollPosition = (sh-st-oh+1)
+            
+            if (currentScrollPosition < 0) { return }
+            if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) { return }
+
+          this.hideNavbar = currentScrollPosition < this.lastScrollPosition
+          this.lastScrollPosition = currentScrollPosition
+    } // onScroll
+  },
+  mounted() {
+    document.body.addEventListener('scroll', this.onScroll);
+  },
+  beforeDestroy() {
+    document.body.removeEventListener('scroll', this.onScroll);
+  },
 }
 </script>

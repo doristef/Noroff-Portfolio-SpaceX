@@ -5,10 +5,10 @@
             <div v-else>
                 <div class="[ mb-2 ]">
                     <a v-if="apod.hdurl" :href="apod.hdurl" :alt="apod.title">
-                        <b-img :src="apod.url" :alt="apod.title" class="[ apod-img ]" />
+                        <b-img :src="apod.url" :alt="apod.title" class="[ apod-img ][ my-4 ]" />
                     </a>
                     <a v-else-if="apod.url" :href="apod.url" :alt="apod.title">
-                        <b-img :src="apod.url" :alt="apod.title" class="[ apod-img ]" />
+                        <b-img :src="apod.url" :alt="apod.title" class="[ apod-img ][ my-4 ]" />
                     </a>
                 </div>
                 <h1 class="[ jumbotron-heading ]">{{ apod.title }}</h1>

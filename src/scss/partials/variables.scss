@@ -1,20 +1,12 @@
 // FONT FAMILY 
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700|Teko:300:400:700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:400,600,700');
 
 //*** FONT - IMPORT ***/
 
-$bodyFont : 'Lato',sans-serif;
+$bodyFont : 'Lato', sans-serif;
 $bodyWeight : 300;
-$h1Font : 'Teko', cursive;
-$h1Weight: 700;
-$headingFont : 'Lato', cursive;
+$headingFont : 'Montserrat',sans-serif;
 $headingWeight: 700;
-$navHeadingFont : 'Teko', sans-serif;
-$navHeadingWeight: 700;
-$navHeadingSize: 3.5em;
-$navFont : 'Teko', sans-serif;
-$navWeight : 400;
-$navSize: 2.2em;
 
 //** COLORS **//
 $black : #000000;
@@ -40,7 +32,5 @@ $bodyFontSize : 16px;
 $lineHeight: 1.5em;
 
 //** SIZES **//
-$navHeight: 80px;
-
 $smallScreen: 767px;
 $medScreen: 1024px;

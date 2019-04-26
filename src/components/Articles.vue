@@ -3,6 +3,7 @@
         <b-row align-h="center" class="[ m-2 mb-5 ]">
             <h1 class="[ text-white ]"> Articles - SpaceX</h1>
         </b-row>
+<!--- SEARCH --->
         <b-row class="[ m-2 mb-5 ]">
             <b-input-group class="[ justify-content-center ]">
                 <b-input-group-text slot="prepend">
@@ -14,16 +15,49 @@
                     type="text"
                     placeholder="Search in Articles"
                 />
+                <b-dropdown text="Sort By" variant="secondary" slot="append">
+                    <b-dropdown-item>
+                        <a href="#" id="title"
+                            @click="requestKeyChange('title')">Title
+                            <font-awesome-icon icon="check" size="1x" class="[ mr-2 ]"
+                            v-if="filterKey==='title'" />
+                        </a>
+                    </b-dropdown-item>
+                    <b-dropdown-item>
+                        <a href="#" id="date"
+                            @click="requestKeyChange('event_date_utc')"
+                            >Date
+                            <font-awesome-icon icon="check" size="1x" class="[ mr-2 ]"
+                            v-if="filterKey==='event_date_utc'" />
+                        </a>
+                    </b-dropdown-item>
+
+
+
+                    <b-dropdown-item>
+                        <a href="#" id="asc"
+                            @click="requestDirChange('asc')">Asc
+                            <font-awesome-icon icon="check" size="1x" class="[ mr-2 ]"
+                            v-if="filterDir==='asc'" />
+                        </a>
+                    </b-dropdown-item>
+                    <b-dropdown-item>
+                        <a href="#" id="desc"
+                            @click="requestDirChange('desc')">Desc
+                            <font-awesome-icon icon="check" size="1x" class="[ mr-2 ]"
+                            v-if="filterDir==='desc'" />
+                        </a>
+                    </b-dropdown-item>
+                </b-dropdown>
             </b-input-group>
 
         </b-row>
         <b-row align-h="center">
-
+<!--- SEARCH END --->
 <!--- CARDS --->
     <h2 v-if="loading">Loading....</h2>
         <b-card v-else v-for="(article, i) in getFilteredArticles" :key="i"
                 no-body
-                sub-title="Tue, 07 Aug 2018"
                 tag="article"
                 text-variant="dark"
                 class="[ m-3 ][ text-dark ][ card-20 ]">
@@ -63,16 +97,25 @@ export default {
       articles: [],
       errors: [],
       articleSearch: '',
-      loading: true
+      loading: true,
+      filterKey: 'event_date_utc',
+      filterDir: 'desc'
     }
   },
 
   computed: {
+    getSearchedArticles() {
+      return this.articles.filter(function(item){
+          return (
+              (item.title.toLowerCase().match(this.articleSearch.toLowerCase()))
+          )
+      }.bind(this));
+    },
     getFilteredArticles() {
-      return this.articles.filter((article) => {
-        return article.title.toLowerCase()
-        .indexOf(this.articleSearch.toLowerCase()) > -1;
-      });
+        // eslint-disable-next-line
+        return _.orderBy(this.getSearchedArticles, function(item){
+            return item[this.filterKey].toLowerCase();
+        }.bind(this),this.filterDir);
     }
   },
 
@@ -85,6 +128,14 @@ export default {
       axios.get(corsURL + apiURL)
         .then(response => { this.articles = response.data; this.loading = false; })
         .catch(e => { this.errors.push(e) })
+    },
+    
+    requestDirChange: function(dir) {
+        return this.filterDir = dir;
+    },
+
+    requestKeyChange: function(key) {
+        return this.filterKey = key;
     }
   },
 

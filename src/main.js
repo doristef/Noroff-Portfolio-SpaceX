@@ -6,6 +6,10 @@ import App from './App.vue';
 /* Vue Router */
 import VueRouter from 'vue-router'
   Vue.use(VueRouter)
+/* Lodash */
+import VueLodash from 'vue-lodash'
+const options = { name: 'lodash' } 
+  Vue.use(VueLodash, options)
 
 /* Google Maps */
 import * as VueGoogleMaps from 'vue2-google-maps'
@@ -20,6 +24,14 @@ import * as VueGoogleMaps from 'vue2-google-maps'
             return moment(String(value)).format('DD/MM/YYYY hh:mm');
         });
 
+    // Currency
+      Vue.filter('formatMoney', function(value) {
+      if (typeof value !== "number") {
+          return value;
+      }
+      return value.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 });
+    });
+
     // Read More
       import ReadMore from 'vue-read-more';
         Vue.use(ReadMore);
@@ -28,6 +40,7 @@ import * as VueGoogleMaps from 'vue2-google-maps'
       Vue.filter('upperFirst', function (value) {
         return value.charAt(0).toUpperCase() + value.slice(1)
       })
+  
 
 /* SASS - SCSS */
 import BootstrapVue from 'bootstrap-vue';
@@ -37,8 +50,8 @@ import "animate.css/animate.css";
 
 /* FontAwesome - FortAwesome  */
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-  library.add( faSearch );
+import { faSearch, faCheck } from "@fortawesome/free-solid-svg-icons";
+  library.add( faSearch, faCheck );
 
 /* Mount */
 new Vue({

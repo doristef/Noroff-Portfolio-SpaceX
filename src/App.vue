@@ -131,7 +131,7 @@ export default {
         var currentScrollPosition = (sh-st-oh+1)
             
             if (currentScrollPosition < 0) { return }
-            if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) { return }
+            if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 30) { return }
 
           this.hideNavbar = currentScrollPosition < this.lastScrollPosition
           this.lastScrollPosition = currentScrollPosition

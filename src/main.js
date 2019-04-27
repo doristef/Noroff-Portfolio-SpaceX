@@ -18,11 +18,16 @@ import * as VueGoogleMaps from 'vue2-google-maps'
   });
 
 /* FILTERS */
+import moment from 'moment';
+
     // Date
-      import moment from 'moment';
         Vue.filter('formatDate', function(value) {
-            return moment(String(value)).format('DD/MM/YYYY hh:mm');
+            return moment(String(value)).format('DD/MM/YYYY');
         });
+    // Date & Time
+      Vue.filter('formatDateTime', function(value) {
+          return moment(String(value)).format('DD/MM/YYYY hh:mm');
+      });
 
     // Currency
       Vue.filter('formatMoney', function(value) {
@@ -31,6 +36,15 @@ import * as VueGoogleMaps from 'vue2-google-maps'
       }
       return value.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 });
     });
+
+    // Number Format 
+    Vue.filter('formatNumber', function(value) {
+      if (typeof value !== "number") {
+        return value;
+      }
+      return value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+    });
+
 
     // Read More
       import ReadMore from 'vue-read-more';
@@ -50,8 +64,8 @@ import "animate.css/animate.css";
 
 /* FontAwesome - FortAwesome  */
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch, faCheck, faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
-  library.add( faSearch, faCheck, faArrowAltCircleRight );
+import { faSearch, faCheck, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+  library.add( faSearch, faCheck, faChevronRight );
 
 /* Mount */
 new Vue({

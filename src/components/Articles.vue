@@ -32,7 +32,7 @@
                         </a>
                     </b-dropdown-item>
 
-
+                <b-dropdown-divider></b-dropdown-divider>
 
                     <b-dropdown-item>
                         <a href="#" id="asc"
@@ -63,7 +63,7 @@
                 class="[ m-3 ][ text-dark ][ card-20 ]">
                 <b-card-body> 
                     <b-card-title><a :href='String( article.links["article"] )' v-if='article.links["article"]'> {{article.title}} </a> <span v-else>{{article.title}}</span></b-card-title>
-                    <b-card-sub-title>{{ article.event_date_utc | formatDate }}</b-card-sub-title>
+                    <b-card-sub-title>{{ article.event_date_utc | formatDateTime }}</b-card-sub-title>
                     <b-card-text class="[ mt-3 ]">
                         <read-more more-str="read more" :text="article.details" link="#" less-str="read less" :max-chars="150"></read-more>
                     </b-card-text>
@@ -124,10 +124,12 @@ export default {
       this.loading = true;
       this.apiCall();
     },
+    
     apiCall: function() {
       axios.get(corsURL + apiURL)
-        .then(response => { this.articles = response.data; this.loading = false; })
+        .then(response => { this.articles = response.data; })
         .catch(e => { this.errors.push(e) })
+        .finally(() => this.loading = false )
     },
     
     requestDirChange: function(dir) {

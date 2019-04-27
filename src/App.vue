@@ -7,7 +7,7 @@
 
     <footer class="[ text-muted text-center ][ mt-3 ]">
       <b-container class="[ container ]">
-        <p>SpaceX Dashboard by doristef.me</p>
+        <p>SpaceX Dashboard by <a href="http://doristef.me" title="doristef.me - Frontend Developer" class="[ text-secondary ]">doristef.me</a></p>
       </b-container>
     </footer>
     
@@ -23,7 +23,7 @@ import Articles from './components/Articles.vue';
 import Latest from './components/Latest.vue';
 import Upcoming from './components/Upcoming.vue';
 import Rockets from './components/Rockets.vue';
-import Capsules from './components/IssLocation.vue';
+import Capsules from './components/Capsules.vue';
 import Astronauts from './components/Astronauts.vue';
 import IssLocation from './components/IssLocation.vue';
 import About from './components/About.vue';
@@ -101,7 +101,7 @@ export default {
         dropdown: { 'Find out more' : {
                                     articles : 'Articles', 
                                     latestlaunch : 'Latest Launch',
-                                    upcominglaunch : 'Upcoming Launch',
+                                    upcominglaunch : 'Upcoming Launches',
                                     rockets : 'Rockets',
                                     capsules : 'Capsules'
                                 },

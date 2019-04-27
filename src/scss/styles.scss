@@ -81,6 +81,10 @@ body {
         width: 100%;
         max-width: 20rem;
     }
+    &-30 {
+        width: 100%;
+        max-width: 30rem;
+    }
     &-40 {
         width: 100%;
         max-width: 40rem;
@@ -97,4 +101,8 @@ body {
 
     transform: translate3d(0, -100%, 0);
     transition: 0.2s all ease-out;
+}
+
+.launch-img {
+    max-width: 200px;
 }

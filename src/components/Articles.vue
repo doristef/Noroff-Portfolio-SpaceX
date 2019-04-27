@@ -1,5 +1,5 @@
 <template>
-    <b-container class="[ container ][ bg-nav ]">
+    <b-container class="[ container ][ navbar-bg ]">
         <b-row align-h="center" class="[ m-2 mb-5 ]">
             <h1 class="[ text-white ]"> Articles - SpaceX</h1>
         </b-row>

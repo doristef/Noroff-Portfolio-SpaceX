@@ -1,0 +1,12 @@
+.apod {
+    &-collapse {
+        max-width: 600px;
+        margin: 10px auto;
+    }
+
+    &-img {
+        max-width: 95%;
+        max-height: 400px;
+    }
+}
+

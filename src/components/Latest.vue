@@ -1,5 +1,5 @@
 <template>
-    <b-container class="[ container ][ bg-nav ]">
+    <b-container class="[ container ][ navbar-bg ]">
         <b-row align-h="center" class="[ m-2 mb-5 ]">
             <h1 class="[ text-white ]"> Latest Launch </h1>
         </b-row>
@@ -15,11 +15,13 @@
                 class="[ m-3 ][ text-dark ]">
 
                 <b-media> 
-                    <div slot="aside">
+                    <b-container>
+                        <b-row>
+                    <div class="col-12 col-md-4">
                         <div class="[ m-2 ]"><h5>#{{ latestLaunch.flight_number }}</h5></div>
                         <b-img v-if="latestLaunch.links.mission_patch"  :src="latestLaunch.links.mission_patch" class="[ launch-img ][ my-2 ]" />
                     </div>
-                    <div class="[ mt-4 ]">
+                    <div class="[ mt-4 ] col-12 col-md-8">
                         <h3>{{ latestLaunch.mission_name }} </h3>
 
                         <h5 class="[ ml-2 ][ text-muted ]" v-if="latestLaunch.launch_date_utc">{{ latestLaunch.launch_date_utc | formatDate }}</h5>
@@ -51,6 +53,8 @@
                             </div>
                         </div>
                     </div>
+                    </b-row>
+                    </b-container>
                 </b-media>
                     <b-card-footer>
                         <h6>Links:</h6>

@@ -1,6 +1,6 @@
 <template>
 
-    <b-navbar fixed="top" toggleable="lg" type="dark" class="[ bg-nav bg-nav-border ]" :class="{ 'navbar-hide': hideNavbar }">
+    <b-navbar fixed="top" toggleable="lg" type="dark" class="[ navbar-bg navbar-bg-border ]" :class="{ 'navbar-hide': hideNavbar }">
         <b-navbar-brand to="/">SpaceX - Dashboard</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

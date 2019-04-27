@@ -1,5 +1,5 @@
 <template>
-    <b-container class="[ container ][ bg-nav ]">
+    <b-container class="[ container ][ navbar-bg ]">
         <b-row class="[ m-2 mb-5 mt-4 ][ text-white ]">
             <b-container>
                 <b-form @submit.prevent="onSubmit" @reset.prevent="onReset">

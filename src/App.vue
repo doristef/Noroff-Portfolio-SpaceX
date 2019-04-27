@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="[ bg-nav ]">
+  <div id="app" class="[ navbar-bg ]">
 
     <Navigation :dropdown="this.dropdown" :navigation="this.navigation" :hideNavbar="hideNavbar" />
     <router-view />

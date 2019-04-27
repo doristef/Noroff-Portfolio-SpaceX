@@ -86,7 +86,11 @@ const router = new VueRouter({
       path: '/thankyou',
       component: ThankYou
     }
-  ]
+  ],
+    // eslint-disable-next-line
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 };
+  }
 })
 
 export default {

@@ -51,7 +51,7 @@
 <!--- CARDS --->
         <b-row align-h="center">
 
-    <h2 v-if="loading">Loading....</h2>
+    <h2 v-if="loading">Loading...</h2>
         <b-card v-else v-for="(launch, i) in getFilteredLaunches" :key="i"
                 no-body
                 tag="article"
@@ -60,19 +60,19 @@
                 <b-card-body> 
                     <b-card-title>{{ launch.mission_name }} <span class="float-right"><b>#{{ launch.flight_number }}</b></span> </b-card-title>
                     <b-card-sub-title class="[ ml-2 ]">{{ launch.launch_date_utc | formatDate }}</b-card-sub-title>
-                    <b-card-text class="[ mt-4 ]">
+                        <div class="[ mt-4 ]">
 
-                        <div v-if="launch.launch_site.site_name_long" class="[ mb-4 ]">
-                            <h5> Launch Site: </h5>
-                            <p class="[ ml-3 ]">{{ launch.launch_site.site_name_long }}</p>
+                            <div v-if="launch.launch_site.site_name_long" class="[ mb-4 ]">
+                                <h5> Launch Site: </h5>
+                                <p class="[ ml-3 ]">{{ launch.launch_site.site_name_long }}</p>
+                            </div>
+
+                            <div v-if="launch.rocket.rocket_name">
+                                <h5> Rocket: </h5>
+                                <p class="[ ml-3 ]">{{ launch.rocket.rocket_name }}</p>
+                            </div>
+
                         </div>
-
-                        <div v-if="launch.rocket.rocket_name">
-                            <h5> Rocket: </h5>
-                            <p class="[ ml-3 ]">{{ launch.rocket.rocket_name }}</p>
-                        </div>
-
-                    </b-card-text>
                 </b-card-body>
                     <b-card-footer>
                         <span v-for="(link, i) in launch.links" :key="i">

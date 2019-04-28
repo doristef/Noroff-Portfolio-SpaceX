@@ -3,36 +3,37 @@
         <b-row class="[ m-2 mb-5 mt-4 ][ text-white ]">
             <b-container>
                 <b-form @submit.prevent="onSubmit" @reset.prevent="onReset">
-                <b-form-group
+                  <b-form-group
                     id="input-group-1"
                     label="Email address:"
                     label-for="input-1"
                     description="Email format: xxx@xxx.xx "
-                >
+                  >
                     <b-form-input
-                    id="input-1"
-                    v-model="form.email"
-                    type="email"
-                    required
-                    placeholder="Enter email"
+                      id="input-1"
+                      v-model="form.email"
+                      type="email"
+                      required
+                      placeholder="Enter your email"
                     ></b-form-input>
                 </b-form-group>
 
                 <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
                     <b-form-input
-                    id="input-2"
-                    v-model="form.name"
-                    required
-                    placeholder="Enter name"
+                      id="input-2"
+                      v-model="form.name"
+                      required
+                      placeholder="Enter your name"
                     ></b-form-input>
                 </b-form-group>
 
                 <b-form-group id="input-group-3" label="Message:" label-for="input-3">
                     <b-form-textarea
-                        id="message"
-                        v-model="form.message"
-                        placeholder="Enter something..."
-                        rows="3"
+                      id="message"
+                      v-model="form.message"
+                      placeholder="Type in your message"
+                      rows="4"
+                      required
                     ></b-form-textarea>
                 </b-form-group>
 
@@ -47,8 +48,9 @@
 <script>
 import VueRouter from 'vue-router';
   export default {
-      name: 'contact',
-      VueRouter,
+    name: 'contact',
+    VueRouter,
+
     data() {
       return {
         form: {
@@ -59,18 +61,15 @@ import VueRouter from 'vue-router';
         }
       }
     },
+
     methods: {
       onSubmit() {
         this.$router.push('/thankyou')
       },
       onReset() {
-        this.form.email = ''
-        this.form.name = ''
-        this.form.message = null
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
+          this.form.email = ''
+          this.form.name = ''
+          this.form.message = null
       }
     }
   }

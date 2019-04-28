@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="[ navbar-bg ]">
 
-    <Navigation :dropdown="this.dropdown" :navigation="this.navigation" :hideNavbar="hideNavbar" />
+    <Navigation :dropdown="this.dropdown" :navigation="this.navigation" :hideNavbar="this.hideNavbar" />
     <router-view />
     <router-view name="helper" />
 
@@ -87,7 +87,7 @@ const router = new VueRouter({
       component: ThankYou
     }
   ],
-    // eslint-disable-next-line
+  // eslint-disable-next-line
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 };
   }
@@ -127,7 +127,6 @@ export default {
 
   methods: {
     onScroll () {
-        // For some reason it only works on body
         var sh = document.body.scrollHeight;
         var st = document.body.scrollTop;
         var oh = document.body.offsetHeight;

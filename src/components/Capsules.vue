@@ -7,7 +7,7 @@
 <!--- CARDS --->
         <b-row align-h="center">
 
-        <h2 v-if="loading">Loading....</h2>
+        <h2 v-if="loading">Loading...</h2>
         <b-card v-else v-for="(capsule, key) in capsules" :key="key"
                 no-body
                 tag="article"

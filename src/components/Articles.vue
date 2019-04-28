@@ -55,7 +55,7 @@
         <b-row align-h="center">
 <!--- SEARCH END --->
 <!--- CARDS --->
-    <h2 v-if="loading">Loading....</h2>
+    <h2 v-if="loading">Loading...</h2>
         <b-card v-else v-for="(article, i) in getFilteredArticles" :key="i"
                 no-body
                 tag="article"

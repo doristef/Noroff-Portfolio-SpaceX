@@ -1,3 +1,5 @@
-module.exports = {
-    publicPath: '/semester4/portfolio-spacex/',
-  };
+  module.exports = {
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/semester4/portfolio-spacex/'
+      : '/'
+  }

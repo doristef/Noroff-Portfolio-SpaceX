@@ -14,7 +14,7 @@
                     International Space Station
                 </b-card-sub-title>
                 <div class="[ mt-3 ]" >
-                    <h2 v-if="loadingIss">Loading....</h2>
+                    <h2 v-if="loading">Loading....</h2>
                     <ul v-else>
                         <li>
                             Latitude: <b>{{ removeDecimals(issLocation.iss_position.latitude, 2) }}</b> 
@@ -63,7 +63,7 @@ export default {
     return {
       issLocation: [],
       errors: [],
-      loadingIss: true
+      loading: true
     }
   },
   methods: {
@@ -76,7 +76,7 @@ export default {
         .get(corsURL + issApiURL)
         .then(response => { this.issLocation = response.data; })
         .catch(e => { this.errors.push(e) })
-        .finally(() => this.loadingIss = false)
+        .finally(() => this.loading = false)
     }
   },
 

@@ -11,7 +11,7 @@
                       People in space right now:
                   </b-card-title>
                   <div class="[ mt-3 ]" >
-                      <h2 v-if="loadingAstro">Loading....</h2>
+                      <h2 v-if="loading">Loading...</h2>
                       <ul v-else>
                           <li v-for="(astronaut, i) in astronauts.people" :key="i">
                               <b>{{ astronaut.name }}</b> is in the <b>{{ astronaut.craft }}</b>
@@ -41,20 +41,18 @@ export default {
   data() {
     return {
       astronauts: [],
-      issLocation: [],
       errors: [],
-      loadingAstro: true,
+      loading: true,
     }
   },
 
   methods: {
-
     getAstronauts: function() {
       axios
         .get(corsURL + astrosApiURL)
         .then(response => { this.astronauts = response.data; })
         .catch(e => { this.errors.push(e) })
-        .finally(() => this.loadingAstro = false)
+        .finally(() => this.loading = false)
     }
 
   },

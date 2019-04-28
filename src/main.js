@@ -4,15 +4,16 @@ import App from './App.vue';
   Vue.config.productionTip = false;
 
 /* Vue Router */
-import VueRouter from 'vue-router'
-  Vue.use(VueRouter)
+import VueRouter from 'vue-router';
+  Vue.use(VueRouter);
+
 /* Lodash */
-import VueLodash from 'vue-lodash'
-const options = { name: 'lodash' } 
-  Vue.use(VueLodash, options)
+import VueLodash from 'vue-lodash';
+const options = { name: 'lodash' } ;
+  Vue.use(VueLodash, options);
 
 /* Google Maps */
-import * as VueGoogleMaps from 'vue2-google-maps'
+import * as VueGoogleMaps from 'vue2-google-maps';
   Vue.use(VueGoogleMaps, {
     load: { key: 'AIzaSyAGbs_BPoFSN9r1QVRq_uS4i2Vsu4IMxGo' }
   });
@@ -52,8 +53,8 @@ import moment from 'moment';
 
     // First letter Uppercase
       Vue.filter('upperFirst', function (value) {
-        return value.charAt(0).toUpperCase() + value.slice(1)
-      })
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      });
   
 
 /* SASS - SCSS */

@@ -3,7 +3,15 @@
         <b-jumbotron class="[ text-center ][ pt-0 ]">
             <div v-if="loading"> <h1 class="[ jumbotron-heading ][ mt-2 ]"> Loading... </h1> </div>
             <div v-else>
-                <div class="[ mb-2 ]">
+                <div class="[ mb-2 ]" v-if="apod.media_type === 'video'">
+                    <b-embed
+                        type="iframe"
+                        aspect="16by9"
+                        :src="apod.url"
+                        allowfullscreen
+                    ></b-embed>
+                </div>
+                <div class="[ mb-2 ]" v-else>
                     <a v-if="apod.hdurl" :href="apod.hdurl" :alt="apod.title">
                         <b-img :src="apod.url" :alt="apod.title" class="[ apod-img ][ my-4 ]" />
                     </a>

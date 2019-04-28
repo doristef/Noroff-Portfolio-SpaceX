@@ -13,7 +13,7 @@
                 <b-card-sub-title>
                     International Space Station
                 </b-card-sub-title>
-                <b-card-text class="[ mt-3 ]" >
+                <div class="[ mt-3 ]" >
                     <h2 v-if="loadingIss">Loading....</h2>
                     <ul v-else>
                         <li>
@@ -23,7 +23,7 @@
                             Longitude: <b>{{ removeDecimals(issLocation.iss_position.longitude, 2) }}</b>
                         </li>
                     </ul>
-                </b-card-text>
+                </div>
                 <div v-if="issLocation.iss_position" class="[ align-content-center ]"> 
                     <GmapMap
                         :center="{lat: removeDecimals(issLocation.iss_position.latitude, 2), lng: removeDecimals(issLocation.iss_position.longitude, 2) }"

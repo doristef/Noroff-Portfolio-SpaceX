@@ -16,7 +16,7 @@
                 <b-card-body> 
                     <b-card-title> {{ capsule.type }} </b-card-title>
                     <b-card-sub-title> <b>{{ capsule.capsule_serial }}</b> </b-card-sub-title>
-                    <b-card-text class="[ mt-3 ]">
+                    <div class="[ mt-3 ]">
 
                             <h5 class="[ ml-2 ][ text-muted ]">Status: {{ capsule.status | upperFirst }} </h5>
                                 
@@ -33,7 +33,7 @@
                                 <p class="[ ml-3 ]">{{ capsule.cost_per_launch | formatMoney }}</p>
                             </div>
                         <read-more v-if="capsule.details" more-str="read more" :text="capsule.details" link="#" less-str="read less" :max-chars="150"></read-more>
-                    </b-card-text>
+                    </div>
                 </b-card-body>
                     <b-card-footer>
                         <span>

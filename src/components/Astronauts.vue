@@ -10,14 +10,14 @@
                   <b-card-title>
                       People in space right now:
                   </b-card-title>
-                  <b-card-text class="[ mt-3 ]" >
+                  <div class="[ mt-3 ]" >
                       <h2 v-if="loadingAstro">Loading....</h2>
                       <ul v-else>
                           <li v-for="(astronaut, i) in astronauts.people" :key="i">
                               <b>{{ astronaut.name }}</b> is in the <b>{{ astronaut.craft }}</b>
                           </li>
                       </ul>
-                  </b-card-text>
+                  </div>
               </b-card-body>
                   <b-card-footer>
                       <span v-if="astronauts.number">That's <b>{{ astronauts.number }}</b> people,</span> how awesome is that!

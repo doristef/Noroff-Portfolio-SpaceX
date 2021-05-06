@@ -42,7 +42,7 @@
 
 <script>
 import axios from 'axios';
-const corsURL = "https://cors-anywhere.herokuapp.com/"; // Unblock Cross-Origin request
+const corsURL = ""; // Unblock Cross-Origin request
 const apodApiURL = "https://api.nasa.gov/planetary/apod?api_key=U4rRiFqibIG2QG7OAaDiLyQTeMkGOYrHjXEH31qo"; // API
 
 export default {

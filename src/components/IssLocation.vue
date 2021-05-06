@@ -51,7 +51,7 @@
 <script>
 import axios from 'axios';
 
-const corsURL = "https://cors-anywhere.herokuapp.com/"; // Unblock Cross-Origin request
+const corsURL = ""; // Unblock Cross-Origin request
 const issApiURL = "http://api.open-notify.org/iss-now.json"; // API 
 
 export default {

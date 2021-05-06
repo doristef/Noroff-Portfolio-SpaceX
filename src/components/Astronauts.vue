@@ -30,7 +30,7 @@
 <script>
 
 import axios from 'axios';
-const corsURL = "https://cors-anywhere.herokuapp.com/"; // Needed for Unblocking Cross-Origin request
+const corsURL = ""; // Needed for Unblocking Cross-Origin request
 const astrosApiURL = "http://api.open-notify.org/astros.json"; // API to fetch from
 
 export default {

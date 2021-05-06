@@ -84,7 +84,8 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"; 
 import axios from 'axios';
-const corsURL = "https://cors-anywhere.herokuapp.com/"; // Needed for Unblocking Cross-Origin request
+import _ from 'lodash';
+const corsURL = ""; // Needed for Unblocking Cross-Origin request
 const apiURL = "https://api.spacexdata.com/v2/info/history/?sort=event_date_utc&order=desc"; // API to fetch from
 
 export default {

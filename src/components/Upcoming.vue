@@ -91,7 +91,7 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"; 
 import axios from 'axios';
-const corsURL = "https://cors-anywhere.herokuapp.com/"; // Unblock Cross-Origin request
+const corsURL = ""; // Unblock Cross-Origin request
 const apiURL = "https://api.spacexdata.com/v2/launches/upcoming"; // API 
 
 export default {

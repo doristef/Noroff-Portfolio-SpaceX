@@ -50,7 +50,7 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"; 
 import axios from 'axios';
-const corsURL = "https://cors-anywhere.herokuapp.com/"; // Needed for Unblocking Cross-Origin request
+const corsURL = ""; // https://cors-anywhere.herokuapp.com/ - Needed for Unblocking Cross-Origin request
 const apiURL = "https://api.spacexdata.com/v2/info/"; // API to fetch from
 
 export default {

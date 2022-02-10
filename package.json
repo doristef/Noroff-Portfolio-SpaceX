@@ -24,7 +24,7 @@
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "vue": "^2.6.12",
     "vue-lodash": "^2.1.2",
     "vue-read-more": "^1.1.1",
